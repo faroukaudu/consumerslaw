@@ -1,0 +1,39 @@
+<%- include('include/header'); %> 
+<style>
+    div.sticky {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  background-color: #f7f1f1;
+  padding: 15px;
+  font-size: 12px;
+}
+
+</style>
+
+<br><br>
+    <div class="sticky">
+        <form action="/add-package" method="POST">
+            <label for="">Product Name</label>
+            <input type="text" name="pacName" placeholder="" style="width: 370px; height: 40px;" required>
+            <!-- <label for="">Product info</label>
+            <input type="text" name="pacInfo" id="">
+            <label for="">price</label>
+            <input type="text" name="price"> -->
+            <label for="">string name</label>
+            <input type="text" name="url" style="width: 370px; height: 40px;" required>
+            <button class="btn btn-outline-success" type="submit" style="width: 300px;">Add</button>
+        </form>
+    </div>
+    <div>
+        <% product.forEach(function(items){ %>
+            <div style="display: inline-block; border-width: 1px; border-style: solid; border-color: rgb(78, 74, 74); margin:20px 5px 10px 5px; padding: 10px;"  >
+                <p>Name: <%= items.packageName.slice(0,15)%>..</p>
+            <p>Details: <%= items.packageinfo.slice(0,10)%>..</p>
+            <p>image: <img src="assets/images/letter/<%=items.packageUrl%>.png"    alt="image" width="150px" height="180px"></p> 
+            <p>price: <%= items.price%></p>
+            </div>
+        <% }) %>
+    </div>
+</body>
+</html>

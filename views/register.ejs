@@ -1,0 +1,195 @@
+<%- include('include/header'); %>
+                <!--Main Content-->
+                <div class="container" style="margin-top: 70px; margin-bottom: 50px;">   
+                    <div class="login-register pt-2">
+                        <div class="row">
+                            <div class="col-12 col-sm-12 col-md-8 offset-md-2 col-lg-6 offset-lg-3">
+                                <div class="inner h-100">
+                                    <form method="post" action="#" class="customer-form">	
+                                        <h2 class="text-center fs-4 mb-4">Register here if you are a new customer</h2>
+                                        <div class="form-row">
+                                            <div class="form-group col-12">
+                                                <label for="CustomerUsername" class="d-none">Username <span class="required">*</span></label>
+                                                <input type="text" name="customer[Username]" placeholder="Username" id="CustomerUsername" value="" required />
+                                            </div>
+                                            <div class="form-group col-12">
+                                                <label for="CustomerEmail" class="d-none">Email <span class="required">*</span></label>
+                                                <input type="email" name="customer[email]" placeholder="Email" id="CustomerEmail" value="" required />
+                                            </div>
+                                            <div class="form-group col-12">
+                                                <label for="CustomerPassword" class="d-none">Password <span class="required">*</span></label>
+                                                <input type="password" name="customer[password]" placeholder="Password" id="CustomerPassword" value="" required />                        	
+                                            </div>
+                                            <div class="form-group col-12">
+                                                <label for="CustomerConfirmPassword" class="d-none">Confirm Password <span class="required">*</span></label>
+                                                <input id="CustomerConfirmPassword" type="Password" name="customer[ConfirmPassword]" placeholder="Confirm Password" required />                         	
+                                            </div>
+                                            <div class="form-group col-12">
+                                                <div class="login-remember-forgot d-flex justify-content-between align-items-center">
+                                                    <div class="agree-check customCheckbox">
+                                                        <input id="agree" name="agree" type="checkbox" value="agree" required />
+                                                        <label for="agree"> I agree to terms & Policy.</label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-group col-12 mb-0">
+                                                <input type="submit" class="btn btn-primary btn-lg w-100" value="Register" />
+                                            </div>
+                                        </div>
+
+                                        <div class="login-divide"><span class="login-divide-text">OR</span></div>
+
+                                        <p class="text-center fs-6 text-muted mb-3">Or Sign up with</p>
+                                        <div class="login-social d-flex-justify-center">
+                                            <a class="social-link facebook rounded-5 d-flex-justify-center" href="#"><i class="icon anm anm-facebook-f me-2"></i> Facebook</a>
+                                            <a class="social-link google rounded-5 d-flex-justify-center" href="#"><i class="icon anm anm-google-plus-g me-2"></i> Google</a>
+                                            <a class="social-link twitter rounded-5 d-flex-justify-center" href="#"><i class="icon anm anm-twitter me-2"></i> Twitter</a>
+                                        </div>
+
+                                        <div class="login-signup-text mt-4 mb-2 fs-6 text-center text-muted">Already have an account? <a href="/login" class="btn-link">Login now</a></div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--End Main Content-->
+            </div>
+            <!-- End Body Container -->
+
+            <!--Footer-->
+            <div class="footer">
+                
+                
+                <div class="footer-bottom clearfix">
+                    <div class="container">
+                        <div class="d-flex-center flex-column justify-content-md-between flex-md-row-reverse">
+                            <ul class="payment-icons d-flex-center mb-2 mb-md-0">
+                                <li><i class="icon anm anm-cc-visa"></i></li>
+                                <li><i class="icon anm anm-cc-mastercard"></i></li>
+                                <li><i class="icon anm anm-cc-amex"></i></li>
+                                <li><i class="icon anm anm-cc-paypal"></i></li>
+                                <li><i class="icon anm anm-cc-discover"></i></li>
+                                <li><i class="icon anm anm-cc-stripe"></i></li>
+                                <li><i class="icon anm anm-cc-jcb"></i></li>
+                            </ul>
+                            <div class="copytext">&copy; 2024 consumerLaw Blueprint. All Rights Reserved.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--End Footer-->
+
+            <!--Scoll Top-->
+            <div id="site-scroll"><i class="icon anm anm-arw-up"></i></div>
+            <!--End Scoll Top-->
+
+            <!--MiniCart Drawer-->
+            <div id="minicart-drawer" class="minicart-right-drawer offcanvas offcanvas-end" tabindex="-1">
+                <!--MiniCart Empty-->
+                <div id="cartEmpty" class="cartEmpty d-flex-justify-center flex-column text-center p-3 text-muted d-none">
+                    <div class="minicart-header d-flex-center justify-content-between w-100">
+                        <h4 class="fs-6">Your cart (0 Items)</h4>
+                        <button class="close-cart border-0" data-bs-dismiss="offcanvas" aria-label="Close"><i class="icon anm anm-times-r" data-bs-toggle="tooltip" data-bs-placement="left" title="Close"></i></button>
+                    </div>
+                    <div class="cartEmpty-content mt-4">
+                        <i class="icon anm anm-cart-l fs-1 text-muted"></i> 
+                        <p class="my-3">No Products in the Cart</p>
+                        <a href="index.html" class="btn btn-primary cart-btn">Continue shopping</a>
+                    </div>
+                </div>
+                <!--End MiniCart Empty-->
+
+                <!--MiniCart Content-->
+                <div id="cart-drawer" class="block block-cart">
+                    <div class="minicart-header">
+                        <button class="close-cart border-0" data-bs-dismiss="offcanvas" aria-label="Close"><i class="icon anm anm-times-r" data-bs-toggle="tooltip" data-bs-placement="left" title="Close"></i></button>
+                        <h4 class="fs-6">Your cart (2 Items)</h4>
+                    </div>
+                    <div class="minicart-content">
+                        <ul class="m-0 clearfix">
+                            <li class="item d-flex justify-content-center align-items-center">
+                                <a class="product-image rounded-0" href="product-layout1.html">
+                                    <img class="rounded-0 blur-up lazyload" data-src="assets/images/products/cart-product-img1.jpg" src="assets/images/products/cart-product-img1.jpg" alt="product" title="Product" width="120" height="170" />
+                                </a>
+                                <div class="product-details">
+                                    <a class="product-title" href="product-layout1.html">Women Sandals</a>
+                                    <div class="variant-cart my-2">Black / XL</div>
+                                    <div class="priceRow">
+                                        <div class="product-price">
+                                            <span class="price">$54.00</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="qtyDetail text-center">
+                                    <div class="qtyField">
+                                        <a class="qtyBtn minus" href="#;"><i class="icon anm anm-minus-r"></i></a>
+                                        <input type="text" name="quantity" value="1" class="qty">
+                                        <a class="qtyBtn plus" href="#;"><i class="icon anm anm-plus-r"></i></a>
+                                    </div>
+                                    <a href="#" class="edit-i remove"><i class="icon anm anm-pencil-ar" data-bs-toggle="tooltip" data-bs-placement="top" title="Edit"></i></a>
+                                    <a href="#" class="remove"><i class="icon anm anm-times-r" data-bs-toggle="tooltip" data-bs-placement="top" title="Remove"></i></a>
+                                </div>
+                            </li>
+                            <li class="item d-flex justify-content-center align-items-center">
+                                <a class="product-image rounded-0" href="product-layout1.html">
+                                    <img class="rounded-0 blur-up lazyload" data-src="assets/images/products/cart-product-img1.jpg" src="assets/images/products/cart-product-img1.jpg" alt="product" title="Product" width="120" height="170" />
+                                </a>
+                                <div class="product-details">
+                                    <a class="product-title" href="product-layout1.html">High Waist Jeans</a>
+                                    <div class="variant-cart my-2">Yellow / M</div>
+                                    <div class="priceRow">
+                                        <div class="product-price">
+                                            <span class="price old-price">$114.00</span><span class="price">$99.00</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="qtyDetail text-center">
+                                    <div class="qtyField">
+                                        <a class="qtyBtn minus" href="#;"><i class="icon anm anm-minus-r"></i></a>
+                                        <input type="text" name="quantity" value="1" class="qty">
+                                        <a class="qtyBtn plus" href="#;"><i class="icon anm anm-plus-r"></i></a>
+                                    </div>
+                                    <a href="#" class="edit-i remove"><i class="icon anm anm-pencil-ar" data-bs-toggle="tooltip" data-bs-placement="top" title="Edit"></i></a>
+                                    <a href="#" class="remove"><i class="icon anm anm-times-r" data-bs-toggle="tooltip" data-bs-placement="top" title="Remove"></i></a>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="minicart-bottom">
+                        <div class="shipinfo">
+                            <div class="progress mb-2"><div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">50%</div></div>
+                            <div class="freeShipMsg"><i class="icon anm anm-truck-l fs-6 me-2 align-middle"></i>Only <span class="money" data-currency-usd="$199.00" data-currency="USD">$199.00</span> away from <b>Free Shipping</b></div>
+                            <div class="freeShipMsg d-none"><i class="icon anm anm-truck-l fs-6 me-2 align-middle"></i>Congrats! You are eligible for <b>Free Shipping</b></div>
+                        </div>
+                        <div class="subtotal clearfix my-3">
+                            <div class="totalInfo clearfix mb-1 d-none"><span>Shipping:</span><span class="item product-price">$10.00</span></div>
+                            <div class="totalInfo clearfix mb-1 d-none"><span>Tax:</span><span class="item product-price">$0.00</span></div>
+                            <div class="totalInfo clearfix"><span>Total:</span><span class="item product-price">$163.00</span></div>
+
+                        </div>
+                        <div class="agree-check customCheckbox">
+                            <input id="prTearm" name="tearm" type="checkbox" value="tearm" required />
+                            <label for="prTearm"> I agree with the </label><a href="#" class="ms-1 text-link">Terms &amp; conditions</a>
+                        </div>
+                        <div class="minicart-action d-flex mt-3">
+                            <a href="checkout-style1.html" class="proceed-to-checkout btn btn-primary w-50 me-1">Check Out</a>
+                            <a href="cart-style1.html" class="cart-btn btn btn-secondary w-50 ms-1">View Cart</a>
+                        </div>
+                    </div>
+                </div>
+                <!--MiniCart Content-->
+            </div>
+            <!--End MiniCart Drawer-->
+
+
+            <!-- Including Jquery/Javascript -->
+            <!-- Plugins JS -->
+            <script src="assets/js/plugins.js"></script>
+            <!-- Main JS -->
+            <script src="assets/js/main.js"></script>
+
+        </div>
+        <!--End Page Wrapper-->
+    </body>
+</html>
