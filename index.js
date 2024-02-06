@@ -30,6 +30,11 @@ app.use(session({
     saveUninitialized: false,
     // store: new MongoStore({mongoUrl: 'mongodb://127.0.0.1:27017/lawDB',
     //                         ttl:14*60*1000}),
+
+    store: new MongoStore({mongoUrl: "mongodb+srv://consumerlaw:"+process.env.PASSWORDDB+"@consumerlaw.vfwut3x.mongodb.net/lawDB",
+                            ttl:14*60*1000}),
+
+
     cookie: { 
         //Expire Session after 1min.
         maxAge: 60000,
@@ -45,8 +50,8 @@ app.use(passport.session());
 // Initialize Seesion end
 
 
-const uri = "mongodb://127.0.0.1:27017/lawDB";
-// const uri = "mongodb+srv://consumerlaw:"+process.env.PASSWORDDB+"@consumerlaw.vfwut3x.mongodb.net/?retryWrites=true&w=majority";
+// const uri = "mongodb://127.0.0.1:27017/lawDB";
+const uri = "mongodb+srv://consumerlaw:"+process.env.PASSWORDDB+"@consumerlaw.vfwut3x.mongodb.net/lawDB";
 
 database().catch(err => console.log(err));
 
