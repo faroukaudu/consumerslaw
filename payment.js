@@ -97,8 +97,8 @@ app.post("/payment-form",(req,res)=>{
             "payment_method": "paypal"
         },
         "redirect_urls": {
-            "return_url": "http://localhost:5000/success",
-            "cancel_url": "http://cancel.url"
+            "return_url": "https://oyster-app-xc7a7.ondigitalocean.app/success",
+            "cancel_url": "https://oyster-app-xc7a7.ondigitalocean.app/cancel.url"
         },
         "transactions": [{
             "item_list": {
