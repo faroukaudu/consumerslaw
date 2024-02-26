@@ -3222,3 +3222,85 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder { opacity:0.7; -ms-f
 }
 .fadeInUp { -webkit-animation-name: fadeInUp; animation-name: fadeInUp; }
 
+
+@media screen and (max-width: 420px) {
+  /* .phonesli {
+  background-color:#007d00 ;
+  font-size: 1px; */
+  
+ /* } */
+ .Delivery {
+  margin-top: 20px;
+ }
+
+ /* .red {
+  font-size: 30px;
+  background-color: #000082;
+  line-height: 30px;
+ } */
+
+
+ .homerun {
+  padding: 20px;
+  /* text-align: center; */
+  text-align:center;
+  /* text-align:start; */
+  /* background-color: #0000fe; */
+ }
+ .listme {
+  margin-top: -20px;
+  padding-left: 20px;
+  padding-right: 20;
+ }
+
+ .listme li{
+  font-size: 10px;
+  
+  /* background-color: #000082; */
+ }
+}
+
+@media (max-width: 1300px){
+  
+
+  .homerun {
+    margin-bottom: 30px;
+    /* padding: 0 100px 0 100px; */
+  }
+  
+  .listme{
+    font-size: 10px;
+  }
+}
+
+
+/* .phonesli h2 {
+  
+  font-size: 15px;
+ } */
+
+ /* btw 400px and 799 */
+ @media screen and (min-width: 300px) {
+  .red {
+    font-size: 20px;
+    /* background-color: green; */
+    line-height: 25px;
+    margin-bottom: -60px;
+   }
+   .centerB {
+    background-color: green;
+  }
+ }
+
+ /* 800px or wider */
+ @media screen and (min-width: 800px){
+  .centerB {
+    background-color: #000;
+  }
+
+  .red {
+    font-size: 40px;
+    /* background-color: yellow; */
+    line-height: 40px;
+   }
+ }

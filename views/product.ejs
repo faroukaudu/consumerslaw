@@ -1,4 +1,4 @@
-<%- include("include/header"); %>
+<%- include('include/header',{sesCookies:cookies}); %>
 
                 <!--Main Content-->
                 <div class="container" style="margin-top: 40px;">     
@@ -149,7 +149,7 @@
                                             <!-- <a href="/add-to-cart"> <button  name="add" class="btn btn-secondary ">
                                              <span>Add to cart</span>
                                          </button></a> -->
-                                            <a class="btn btn-secondary" href="/add-to-cart">Add to Cart</a>
+                                            <a class="btn btn-secondary" href="/add-to-cart/<%= packages.id%>/dispute-letters">Add to Cart</a>
                                             <button type="submit" name="add" class="btn btn-secondary product-form-sold-out d-none" disabled="disabled">
                                                 <span>Out of stock</span>
                                             </button>

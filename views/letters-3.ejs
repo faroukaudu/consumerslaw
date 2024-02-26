@@ -1,4 +1,4 @@
-<%- include("include/header"); %>
+<%- include('include/header',{sesCookies:cookies}); %>
 
             <!-- Body Container -->
             <div id="page-content">
@@ -15,7 +15,7 @@
                         </div>
                     </div>
                 </div>
-                <div style="font-size: 20px; text-align: center; margin: -100px 0 30px 0 ; background-color: rgb(176, 39, 8);">
+                <div style="font-size: 20px; text-align: center; margin: -50px 0 30px 0 ; background-color: rgb(176, 39, 8);">
                     <div style="padding: 80px; color: antiquewhite;">
                         <p>Our consumer law and management firm brings a wealth of expertise and experience to the table. Our team consists of seasoned professionals who specialize in various areas of consumer law, ensuring that we can effectively address a wide range of legal issues and provide comprehensive solutions.
                         </p>
@@ -232,7 +232,8 @@
                                                         <!-- End Swatches Size -->
                                                         <!-- Product Action -->
                                                         <div class="product-form-submit d-flex-justify-center">
-                                                            <button type="submit" name="add" class="btn product-cart-submit me-2"><span>Add to cart</span></button>
+                                                            <!-- <button type="submit" name="add" class="btn product-cart-submit me-2"><span>Add to cart</span></button> -->
+                                                            <a class="btn product-cart-submit me-2" href="/add-to-cart/<%= items.id%>/dispute-letters-3" >Add to cart</a>
                                                             <button type="submit" name="sold" class="btn btn-secondary product-sold-out d-none" disabled="disabled">Sold out</button>
                                                             <button type="submit" name="buy" class="btn btn-secondary proceed-to-checkout">Buy it now</button>
                                                         </div>

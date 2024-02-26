@@ -1,4 +1,4 @@
-<%- include('include/header'); %>
+<%- include('include/header',{sesCookies:cookies}); %>
 
             <!-- Body Container -->
             <div id="page-content" class="mb-0">
@@ -6,16 +6,16 @@
                 <section class="slideshow slideshow-wrapper">
                     <div class="home-slideshow slick-arrow-dots rounded-dots circle-arrow">
                         <div class="slide">
-                            <div class="slideshow-wrap">
+                            <div class="slideshow-wrap " >
                                 <picture>
-                                    <source media="(max-width:767px)" srcset="assets/images/slideshow/demo4-banner1-mbl.jpg" width="1000" height="990">
+                                    <source media="(max-width:767px)" srcset="assets/images/slideshow/demo4-again2.png" width="1000" height="990">
                                     <img class="blur-up lazyload" src="assets/images/slideshow/demo4-again2.png" alt="slideshow" title="" width="1920" height="990"/>
                                 </picture>
                                 <div class="container">
-                                    <div class="slideshow-content slideshow-overlay middle-right">
+                                    <div class="slideshow-content slideshow-overlay middle-right ">
                                         <div class="slideshow-content-in">
-                                            <div class="wrap-caption animation style1 whiteText">
-                                                <h2 class="ss-mysmall-title">Unlock Your Financial Potential with  <br>Consumerlaw Blueprint</h2>
+                                            <div class="wrap-caption animation style1 whiteText ">
+                                                <h2 class="ss-mysmall-title ss-small-title  " >Unlock Your Financial Potential with  <br>Consumerlaw Blueprint</h2>
                                                 <p class="ss-sub-title">Guiding Individuals and Families towards <br>  Financial Freedom.</p>
                                                 <div class="ss-btnWrap">
                                                     <a style="background-color: #29ace4;" class="btn btn-primary"  href="/sign-up">Join us</a>
@@ -29,14 +29,14 @@
                         <div class="slide">
                             <div class="slideshow-wrap">
                                 <picture>
-                                    <source media="(max-width:767px)" srcset="assets/images/slideshow/demo4-banner2-mbl.jpg" width="1000" height="990">
+                                    <source media="(max-width:767px)" srcset="assets/images/slideshow/demo4-banner2.png" width="1000" height="990">
                                     <img class="blur-up lazyload" src="assets/images/slideshow/demo4-banner2.png" alt="slideshow" title="" width="1920" height="990" />
                                 </picture>
                                 <div class="container">
                                     <div class="slideshow-content slideshow-overlay middle-left">
                                         <div class="slideshow-content-in">
                                             <div class="wrap-caption animation style1 whiteText">
-                                                <h2 class="ss-mysmall-title">Explore What Our Shop<br>Offers</h2>
+                                                <h2 class="ss-mysmall-title ss-small-title">Explore What Our Shop<br>Offers</h2>
                                                 <p class="ss-sub-title">Infinite Package of  <span class="text-primary fw-bold">Digital </span>Products</p>
                                                 <div class="ss-btnWrap">
                                                     <a style="background-color: #29ace4;" class="btn btn-primary" href="shop-grid-view.html">Shop now</a>
@@ -53,7 +53,7 @@
 
                 <!-- Service section -->
                 <!-- Free shopping start-->
-                <div class="container">
+                <div class="container Delivery">
                     <div class="service-info separate-line mdt-0 g-3 g-md-3 row row-cols-lg-3 row-cols-md-2 row-cols-sm-2 row-cols-1">
                         <div class="service-wrap d-flex-center justify-content-sm-center flex-nowrap py-lg-1 mb-2 mb-sm-3 mb-md-0">   
                             <div class="service-icon d-flex align-items-center">
@@ -85,15 +85,16 @@
                     </div>
                 </div>
                 <!-- Free shopping end -->
+
                 <section class="service-section mt-m6 section-clr" style="margin: 15px 0 0 0;">
                     
-                    <div class="destination-section section pt-0" style="background-color: rgb(134, 11, 11); color: aliceblue;">
+                    <div class="destination-section section pt-0" style="background-color: rgb(134, 11, 11); color: aliceblue; width: 100%;">
                         <div class="container">
                             <div class="row align-items-center">
                                 <div class="col-12 col-sm-6 col-md-7">
                                     <div class="about-details px-50 py-5">
                                         <p class=" fs-6 mb-3" style="color: aliceblue;" >Standard Works</p>
-                                        <h2 class="" style="color: aliceblue; line-height: 40px; font-size: 40px;" >Consumerlaw Blueprint is where Financial Dreams Become Reality for Individuals and Families, Empowering You for a Stronger Financial Future.</h2>
+                                        <h2  style="color: aliceblue;  " class="red" >Consumerlaw Blueprint is where Financial Dreams Become Reality for Individuals and Families, Empowering You for a Stronger Financial Future.</h2>
                                         
                                         <!-- <a href="shop-right-sidebar.html" class="btn btn-lg mt-md-2">Explore Now</a> -->
                                     </div>
@@ -192,12 +193,22 @@
                                                     <div class="button-action">
                                                         <div class="addtocart-btn">
                                                             <form class="addtocart" action="#" method="post">
-                                                                <a href="#addtocart-modal" class="btn btn-secondary addtocart add-to-cart-modal" data-bs-toggle="modal" data-bs-target="#addtocart_modal">
+                                                                <a href="add-to-cart/<%= items.id%>/home" class="btn btn-secondary ">
                                                                     <i class="icon anm anm-basket-l me-2"></i><span class="text">Add to Cart</span>
                                                                 </a>
                                                             </form>
                                                         </div>
                                                     </div>
+                                                    <!-- BUTTON WITH POP UP DEACTIVAE  -->
+                                                    <!-- div class="button-action">
+                                                        <div class="addtocart-btn">
+                                                            <form class="addtocart" action="#" method="post">
+                                                                <a href="add-to-cart/<%= items.id%>/cart" class="btn btn-secondary addtocart add-to-cart-modal" data-bs-toggle="modal" data-bs-target="#addtocart_modal">
+                                                                    <i class="icon anm anm-basket-l me-2"></i><span class="text">Add to Cart</span>
+                                                                </a>
+                                                            </form>
+                                                        </div>
+                                                    </div> -->
                                                     <!-- End Product Button -->
                                                 </div>
                                                 <!-- End product details -->
@@ -220,17 +231,20 @@
                             <p class="mb-2 mt-0" style="font-size: 20px;">What will you learn at</p>
                             <h2>CONSUMERLAW BLUEPRINT LLC</h2>
                         </div>
-                        <p style="font-size: 18px; padding: 0 100px 0 100px;">At Consumerlaw Blueprint we will Teach you the Secrets To Repairing, Restoring & Rebuilding Your Credit using Consumer Laws.Our consulting company will teach you how to discover the real truth about credit & How to use consumer laws to change your Financial
-                             Situation & position yourself to have the power to purchase.</p>
-                             <!-- <h4 class="mb-3">Features</h4> -->
-                                            <ul class="checkmark-info" style="padding-left: 110px;">
-                                                <li>How to read a credit report</li>
-                                                <li>How to clean up personal information and delete old names and address</li>
-                                                <li>Learn how to Delete inquiries in 24hrs</li>
-                                                <li>Learn how to Delete Late Payments</li>
-                                                <li>Learn how to Delete Accounts from Identity theft </li>
-                                                <li>Learn how to Delete Collections</li>
-                                            </ul>
+                        <div class="img-responsive">
+                            <p style="font-size: 18px;" class="homerun">At Consumerlaw Blueprint we will Teach you the Secrets To Repairing, Restoring & Rebuilding Your Credit using Consumer Laws.Our consulting company will teach you how to discover the real truth about credit & How to use consumer laws to change your Financial
+                                Situation & position yourself to have the power to purchase.</p>
+                                <!-- <h4 class="mb-3">Features</h4> -->
+                                               <ul class="checkmark-info listme" >
+                                                   <li>How to read a credit report</li>
+                                                   <li>How to clean up personal information and delete old names and address</li>
+                                                   <li>Learn how to Delete inquiries in 24hrs</li>
+                                                   <li>Learn how to Delete Late Payments</li>
+                                                   <li>Learn how to Delete Accounts from Identity theft </li>
+                                                   <li>Learn how to Delete Collections</li>
+                                               </ul>
+                        </div>
+
                                             <hr>
                             <div>
                                 <div class="row g-3 row-cols-lg-3 row-cols-md-3 row-cols-sm-3 row-cols-1 mb-4">

@@ -37,7 +37,7 @@ app.use(session({
 
     cookie: { 
         //Expire Session after 1min.
-        maxAge: 60000,
+        maxAge: 120000,
      }
   }));
 
@@ -96,8 +96,9 @@ function appDb(){
 
 app.get("/", (req,res)=>{
     PackageAdd.find({}).then((homeItems)=>{
+        console.log("All Sees"+ JSON.stringify(req.session));
         if(homeItems){
-            res.render("index", {package:homeItems});
+            res.render("index", {package:homeItems, cookies:req.session});
         }else{
             res.render("index");
         }
@@ -110,13 +111,13 @@ app.get("/", (req,res)=>{
 })
 app.get("/about", (req,res)=>{
     // res.send("Hello World");
-    res.render("about");
+    res.render("about", {cookies:req.session});
 })
 // dispute letter pagination
 app.get("/dispute-letters", (req,res)=>{
     PackageAdd.find({}).then((products)=>{
         if(products){
-            res.render("letters", {"product":products});
+            res.render("letters", {"product":products, cookies:req.session});
         }else{
             res.render("letters");
         }
@@ -126,7 +127,7 @@ app.get("/dispute-letters", (req,res)=>{
 app.get("/dispute-letters-2", (req,res)=>{
     PackageAdd.find({}).then((products)=>{
         if(products){
-            res.render("letters-2", {"product":products});
+            res.render("letters-2", {"product":products, cookies:req.session});
         }else{
             res.render("letters");
         }
@@ -136,7 +137,7 @@ app.get("/dispute-letters-2", (req,res)=>{
 app.get("/dispute-letters-3", (req,res)=>{
     PackageAdd.find({}).then((products)=>{
         if(products){
-            res.render("letters-3", {"product":products});
+            res.render("letters-3", {"product":products, cookies:req.session});
         }else{
             res.render("letters");
         }
@@ -146,7 +147,7 @@ app.get("/dispute-letters-3", (req,res)=>{
 app.get("/dispute-letters-4", (req,res)=>{
     PackageAdd.find({}).then((products)=>{
         if(products){
-            res.render("letters-4", {"product":products});
+            res.render("letters-4", {"product":products, cookies:req.session});
         }else{
             res.render("letters");
         }
@@ -157,23 +158,10 @@ app.get("/dispute-letters-4", (req,res)=>{
 
 app.get("/contact", (req,res)=>{
     // res.send("Hello World");
-    res.render("contact");
+    res.render("contact", {cookies:req.session});
 });
 
-app.get("/checkout", (req,res)=>{
-    var cook = req.session;
-    // cook.push("Hairuuopop");
-    // cook = [];
-    // res.send("Hello World");
-    // req.session.value.push("Ibrahim");
-    // res.render("checkout");
-    res.send(cook);
-});
 
-app.post("/checkout", (req,res)=>{
-    
-    res.render("checkout")
-})
 
  function cartCount (realNum){
     var mainCount = realNum +1;
@@ -186,6 +174,10 @@ function totalAmount (oriAmount, newAmount){
     return totalCost;
 }
 
+app.get("/cook",(req,res)=>{
+    res.send(req.session);
+})
+
 
 app.get("/add-to-cart/:id/:route", (req,res)=>{
 
@@ -194,23 +186,52 @@ app.get("/add-to-cart/:id/:route", (req,res)=>{
         console.log(packFound.price);
         
 
-        var packages = {name:packFound.packageName, 
-            amount:packFound.price};
+        
+        var allPackage = [];
+        
+        
+
+        
 
         if (req.session.value == null){
+
             console.log("empty");
+            var packages = {name:packFound.packageName, 
+                amount:packFound.price, imageUrl:packFound.packageUrl};
+            allPackage.push(packages);
             var cookies = {
                 items_count:1,
                 total_price:packFound.price,
-                items: [packages],
+                items: allPackage,
             }
             req.session.value = cookies;
+            if(req.params.route === "home"){
+                res.redirect("/");
+            }else{
+                res.redirect("/"+req.params.route);
+            }
         }else{
+            // var exist_cookies = req.session.value.items;
+            // allPackage.push(exist_cookies);
+            
+            req.session.value.total_price = req.session.value.total_price + packFound.price;
+            var packages = {name:packFound.packageName, 
+                amount:packFound.price, imageUrl:packFound.packageUrl, packageID:packFound._id};
+            req.session.value.items.push(packages);
+                console.log("THIS IS THE NEW PACKADD" +JSON.stringify(packages));
+            // allPackage.push(packages);
+            console.log("ALL THE PACKAGE IN ARRAY NEW"+ allPackage);
+            console.log("ALLTHE ARRAY>->->->-"+ JSON.stringify(allPackage));
             console.log("not empty");
             var tempStore = req.session.value; 
             console.log(cartCount(tempStore.items_count));
             tempStore.items_count = cartCount(tempStore.items_count);
-            
+            // tempStore.items = allPackage;
+            if(req.params.route === "home"){
+                res.redirect("/");
+            }else{
+                res.redirect("/"+req.params.route);
+            }
         }
         // req.session.value = cookies;
 
@@ -224,7 +245,7 @@ app.get("/add-to-cart/:id/:route", (req,res)=>{
             items: [packages],
         }
         // req.session.value=cookies;
-        res.send(req.session);
+        // res.send(req.session);
 
     })
 
@@ -265,6 +286,19 @@ app.get("/sign-up", (req,res)=>{
 //     // req.session.value = previous + 1;
 //     res.send(item);
 // })
+
+app.get("/testarr",(req,res)=>{
+var count = 2;
+console.log("first is"+ count);
+count --;
+console.log("second is is"+ count);
+count --;
+console.log("last is"+ count);
+})
+
+app.get("/testimonials",(req,res)=>{
+    res.render("carol", {cookies:req.session});
+})
 
 module.exports = {
     main:app,

@@ -1,4 +1,5 @@
 const myModule = require('./index.js');
+const payment = require('./payment.js');
 const addPackages = require('./additems.js');
 // const appadmin = require('./admin.js');
 // const front = require('./front.js');
